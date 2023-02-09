@@ -85,7 +85,6 @@ body {
 .settingsSvg:hover,
 .counter-btn:hover:not(:disabled) {
   transition: ease .3s;
-  transform: scale(1.1);
 }
 
 .settings {
