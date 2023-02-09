@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #292C35;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.count {
+  --standart-color: #63DAFC;
+  --disabled-color: #3F7285;
+}
+
+.count.error {
+  --standart-color: red;
+  --disabled-color: rgba(255, 0, 0, 0.34);
+}
+
+.count{
+
+  margin: 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 15px;
+  font-weight: bold;
+  border: 2px solid var(--standart-color);
+  border-radius: 5px;
+
+}
+
+.display {
+  margin-bottom: 10px;
+  border: 2px solid var(--standart-color);
+  border-radius: 5px;
+
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+  padding: 20px 15px;
+  font-size: 45px;
+  background-color: var(--standart-color);
+  color: #292C35;
+}
+
+.output.max-value {
+  color: #ff0000;
+}
+
+.buttons {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid var(--standart-color);
+  border-radius: 5px;
+}
+
+.count-btn {
+  padding: 0 15px;
+  margin-right: 20px;
+  line-height: 35px;
+  font-size: 35px;
+  font-weight: bold;
+  background-color: var(--standart-color);
+  border: none;
+  border-radius: 5px;
+  color: #292C35;
+  cursor: pointer;
+}
+
+.count-btn:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+.settingsSvg:hover,
+.counter-btn:hover:not(:disabled) {
+  transition: ease .3s;
+  transform: scale(1.1);
+}
+
+.settings {
+  padding: 20px 15px;
+}
+
+.settingsSvg {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  fill: var(--standart-color);
+}
+
+.settingsInputWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.settingsInputLabel {
+  color: var(--standart-color);
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.settingsInput {
+  color: var(--standart-color);
+  width: 150px;
+  padding: 5px 10px;
+  font-size: 18px;
+  border: 2px solid var(--standart-color);
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.title span {
+  font-size: 20px;
+  color: var(--standart-color);
+}
+
+
+
+
+
