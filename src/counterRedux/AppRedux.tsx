@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';
+import './AppRedux.css';
 import {Counter} from "./Counter";
 
-export const App = () => {
+export const AppRedux = () => {
     return (
-        <div className="App">
-            <h2>useState</h2>
+        <div className="AppRedux">
+            <h2>Redux</h2>
             <Counter/>
         </div>
     );
 }
+
 

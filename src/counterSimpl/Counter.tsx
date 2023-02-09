@@ -21,7 +21,7 @@ export const Counter = () => {
     const [error, setError] = useState('')
 
     /////// useEffects
-    // Проверяет изменение настроек, устанавливает ошибку если инпуты не корректны
+    // Устанавливает ошибку при недопустимых значениях инпутов
     useEffect(() => {
         setIsSetChanged(checkSetChanging())
         checkIsSetCorrect() ? setError('') : setError('Incorrect settings')
@@ -58,7 +58,7 @@ export const Counter = () => {
         return newConfig ? JSON.parse(newConfig) : count;
     }
 
-    // Хэндлеры  изменение инпутов
+    // Изменение инпутов
     const changeMinInput = (value: number) => {
         setMinInput(parseInt(value.toString()))
     }
@@ -67,7 +67,7 @@ export const Counter = () => {
 
     }
 
-    // Хэндлеры  изменение значения счетчика
+    // Изменение значения счетчика
     const incrOutputValue = () => {
         if (outputValue >= count.maxValue) return;
         setOutputValue(outputValue + 1);
@@ -83,12 +83,12 @@ export const Counter = () => {
     }
 
     const checkSetChanging = () => {
-        const configValueSameAsInputValue = (count.maxValue === maxInput) && (count.minValue === minInput);
-        return configValueSameAsInputValue;
+        const configValueSameAsInput = (count.maxValue === maxInput) && (count.minValue === minInput);
+        return configValueSameAsInput;
     }
-    //провезка что минимальное значение не больше мексимального
+    //проверка что минимальное значение не больше максимального
     const checkIsSetCorrect = () => {
-        return minInput < maxInput;
+        return minInput >= 0 && maxInput >= 0
     }
     const updateConfig = () => {
         setCount({
@@ -136,10 +136,7 @@ export const Counter = () => {
                                   onClick={updateConfig}
                                   disabled={isSetChanged || !!error}>set</Button>
                 }
-
                 <SettingsSvg callback={changeSettings}/>
-
-
             </div>
         </div>
     );

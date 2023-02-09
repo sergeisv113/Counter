@@ -15,4 +15,3 @@ export const Output: React.FC<OutputPropsType> = (props) => {
         </div>
     );
 };
-
